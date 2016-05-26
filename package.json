@@ -1,25 +1,35 @@
 {
-  "name": "universal-react",
+  "name": "andocode",
   "version": "1.0.0",
-  "description": "Universal React.js starter with the minimum possible code",
+  "description": "Ando Code Challenge",
   "main": "lib/server.js",
+  "watch": {
+    "start": "src/**/*.js"
+  },
   "scripts": {
     "build": "./node_modules/babel-cli/bin/babel.js src --out-dir lib --plugins transform-react-jsx --presets es2015",
-    "bundle": "./node_modules/browserify/bin/cmd.js lib/client.js -o public/js/bundle.js",
-    "start": "npm run build && npm run bundle && node lib/server.js"
+    "bundle": "./node_modules/browserify/bin/cmd.js lib/client.js -o public/javascript/bundle.js",
+    "start": "npm run build && npm run bundle && node lib/server.js",
+    "watch": "npm-watch"
   },
-  "author": "Vance Lucas",
-  "license": "BSD",
+  "author": "Amy Hua",
+  "license": "MIT",
   "dependencies": {
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "react": "^0.14.2",
+    "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^0.14.2"
   },
   "devDependencies": {
-    "browserify": "^12.0.1",
     "babel-cli": "^6.1.2",
     "babel-plugin-transform-react-jsx": "^6.0.18",
-    "babel-preset-es2015": "^6.1.2"
+    "babel-preset-es2015": "^6.1.2",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "less": "^2.7.1",
+    "moment": "^2.13.0",
+    "npm-watch": "^0.1.4"
   }
 }

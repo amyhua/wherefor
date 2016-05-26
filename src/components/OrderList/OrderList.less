@@ -1,0 +1,41 @@
+.order-list {
+  max-width: 1400px;
+  margin: auto;
+  .meta {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    text-align: center;
+  }
+  .filters {
+    display: flex;
+    margin: 30px 0;
+  }
+  .filter {
+    cursor: pointer;
+    flex: 1;
+    display: inline-block;
+    padding: 20px 40px;
+    margin: 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-width: 5px 15px;
+    border-style: solid;
+    &.all {
+      border-color: #666;
+    }
+    &.overdue {
+      border-color: @red;
+    }
+    &.due-soon {
+      border-color: @orange;
+    }
+    &.due-later {
+      border-color: @blue;
+    }
+    &.on {
+      text-decoration: underline;
+    }
+  }
+}

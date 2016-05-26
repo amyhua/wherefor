@@ -1,0 +1,64 @@
+.order {
+  font-size: 18px;
+  padding: 0;
+  margin: 0 0 2em 0;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+
+  &.hidden {
+    display: none;
+  }
+
+  border-left: solid 20px;
+  &.overdue {
+    border-color: @red;
+  }
+  &.due-soon {
+    border-color: @orange;
+  }
+  &.due-later {
+    border-color: @blue;
+  }
+  > span {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .order-no {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+  }
+  .time {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .due, .overdue {
+    font-size: 90%;
+  }
+  .overdue {
+    color: @red;
+  }
+  .eta {
+    margin: 5px 0;
+  }
+  .customer {
+    color: black;
+  }
+  .courier {
+    color: #999;
+  }
+  .action-btn {
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    letter-spacing: 4px;
+    line-height: 24px;
+    font-size: 20px;
+    display: table-cell;
+    padding: 14px;
+    background-color: @green;
+    color: white;
+  }
+}

@@ -1,0 +1,48 @@
+.toggle-close {
+  text-align: right;
+  .close-btn {
+    @width: 150px;
+    @height: 100px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 72px;
+    color: #333;
+    border-width: 0 @width @height 0;
+    border-color: darken(@background-color, 30%);
+    background: darken(@background-color, 5%);
+    border-style: solid;
+    border-bottom-color: transparent;
+    height: 0;
+    width: 0;
+    border-bottom-left-radius: 25px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      right: -1 * @width;
+      top: 0;
+      height: @height;
+      width: @width;
+      border-bottom-left-radius: 10px;
+      text-align: right;
+      font-size: 18px;
+      letter-spacing: 2.5px;
+      line-height: 1.75;
+      text-transform: uppercase;
+      color: white;
+      // wrap text (close <br> up)
+      padding-left: 50px;
+      padding-right: 5px;
+      box-sizing: border-box;
+    }
+
+    &.closed:before {
+      content: 'open up';
+      color: @yellow;
+    }
+
+    &.open:before {
+      content: 'close up';
+    }
+  }
+}
