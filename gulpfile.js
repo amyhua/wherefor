@@ -1,6 +1,9 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
+var useref = require('node-useref');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 
 gulp.task('less', function() {
   return gulp.src('./src/app-bundle.less')
@@ -9,13 +12,18 @@ gulp.task('less', function() {
     }))
     .pipe(gulp.dest('./public/'));
 });
-
-gulp.task('default', function() {
-    return gulp.src('src/**/*.js')
-        .pipe(useref())
-        .pipe(gulp.dest('dist'));
+ 
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src('src/components/*.js'),
+        uglify(),
+        gulp.dest('dist')
+    ],
+    cb
+  );
 });
 
 gulp.task('watch', function() {
   gulp.watch('src/components/**/*.less', ['less']); 
+  gulp.watch('src/components/**/*.js', ['compress']); 
 });
